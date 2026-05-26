@@ -1,0 +1,98 @@
+server_id = "mcp_real_estate"
+display_name = "Real Estate"
+version = "1.0.0"
+domain = "real-estate"
+sdk_version = "0.1.0"
+risk_level = "low"
+writes_allowed = "none"
+transports = ["stdio"]
+credentials = ["vault://attom-api-key", "vault://bayut-api-key"]
+governance_gates = []
+environments = ["development", "staging", "production"]
+
+# --- UK Land Registry (2) ---
+
+[[tools]]
+name = "uk_search_transactions"
+description = "Search UK property transactions (sales) by town, postcode, or price range"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "uk_average_price"
+description = "Get average property price for a UK town based on recent transactions"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# --- Geocoding / Location (3) ---
+
+[[tools]]
+name = "geocode_search"
+description = "Search for locations, neighborhoods, or properties by name (global)"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "reverse_geocode"
+description = "Reverse geocode coordinates to get address and neighborhood info"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "search_properties_nearby"
+description = "Search for real estate agencies and properties in a location"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# --- World Bank Market Data (2) ---
+
+[[tools]]
+name = "get_market_indicators"
+description = "Get real estate market indicators for a country (lending rates, inflation, GDP, urbanization)"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "compare_markets"
+description = "Compare real estate market conditions across multiple countries"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# --- US / ATTOM (3) ---
+
+[[tools]]
+name = "us_search_properties"
+description = "Search US properties by address, ZIP code, or city (requires ATTOM API key)"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = ["vault://attom-api-key"]
+
+[[tools]]
+name = "us_get_valuation"
+description = "Get US property valuation (AVM) by address (requires ATTOM API key)"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = ["vault://attom-api-key"]
+
+[[tools]]
+name = "us_sales_history"
+description = "Get US property sales history by address (requires ATTOM API key)"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = ["vault://attom-api-key"]
+
+# --- Middle East / Bayut (1) ---
+
+[[tools]]
+name = "me_search_listings"
+description = "Search property listings in UAE/Middle East (requires Bayut/RapidAPI key)"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = ["vault://bayut-api-key"]

@@ -1,0 +1,29 @@
+[workspace]
+
+[package]
+name = "mcp-real-estate"
+version = "1.0.0"
+edition = "2024"
+description = "Global property intelligence MCP server — transactions, valuations, market data, geocoding across US, UK, EU, Africa, Middle East, Asia-Pacific"
+license = "Apache-2.0"
+repository = "https://github.com/zavora-ai/mcp-real-estate"
+keywords = ["mcp", "real-estate", "property", "land-registry", "global"]
+categories = ["api-bindings"]
+
+[features]
+default = ["uk-land-registry", "nominatim", "world-bank", "attom", "bayut"]
+uk-land-registry = []
+nominatim = []
+world-bank = []
+attom = []
+bayut = []
+all-backends = ["uk-land-registry", "nominatim", "world-bank", "attom", "bayut"]
+
+[dependencies]
+adk-mcp-sdk = "0.1"
+rmcp = { version = "1.7", features = ["server", "transport-io", "macros"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", features = ["json"] }
+anyhow = "1"
