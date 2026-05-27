@@ -1,6 +1,6 @@
 server_id = "mcp_real_estate"
 display_name = "Real Estate"
-version = "1.0.0"
+version = "1.0.1"
 domain = "real-estate"
 sdk_version = "0.1.0"
 risk_level = "low"

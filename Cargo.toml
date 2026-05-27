@@ -2,7 +2,7 @@
 
 [package]
 name = "mcp-real-estate"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 description = "Global property intelligence MCP server — transactions, valuations, market data, geocoding across US, UK, EU, Africa, Middle East, Asia-Pacific"
 license = "Apache-2.0"
