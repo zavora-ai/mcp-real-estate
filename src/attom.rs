@@ -5,6 +5,7 @@ use serde_json::Value;
 use crate::types::{PropertyListing, PropertyTransaction, PropertyValuation};
 
 /// ATTOM Data Solutions — US property data (requires API key)
+#[derive(Clone)]
 pub struct Attom {
     client: Client,
     api_key: String,

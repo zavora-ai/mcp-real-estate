@@ -4,6 +4,7 @@ use serde_json::Value;
 
 use crate::types::PropertyTransaction;
 
+#[derive(Clone)]
 pub struct UkLandRegistry {
     client: Client,
 }
