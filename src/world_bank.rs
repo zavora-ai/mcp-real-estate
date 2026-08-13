@@ -4,6 +4,7 @@ use serde_json::Value;
 
 use crate::types::MarketIndicator;
 
+#[derive(Clone)]
 pub struct WorldBank {
     client: Client,
 }

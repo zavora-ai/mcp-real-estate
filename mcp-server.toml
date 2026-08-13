@@ -1,16 +1,14 @@
 server_id = "mcp_real_estate"
 display_name = "Real Estate"
-version = "1.0.1"
+version = "1.1.0"
 domain = "real-estate"
-sdk_version = "0.1.0"
+sdk_version = "0.2.0"
 risk_level = "low"
 writes_allowed = "none"
 transports = ["stdio"]
 credentials = ["vault://attom-api-key", "vault://bayut-api-key"]
 governance_gates = []
 environments = ["development", "staging", "production"]
-
-# --- UK Land Registry (2) ---
 
 [[tools]]
 name = "uk_search_transactions"
@@ -25,8 +23,6 @@ description = "Get average property price for a UK town based on recent transact
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
-
-# --- Geocoding / Location (3) ---
 
 [[tools]]
 name = "geocode_search"
@@ -49,8 +45,6 @@ risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
-# --- World Bank Market Data (2) ---
-
 [[tools]]
 name = "get_market_indicators"
 description = "Get real estate market indicators for a country (lending rates, inflation, GDP, urbanization)"
@@ -64,8 +58,6 @@ description = "Compare real estate market conditions across multiple countries"
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
-
-# --- US / ATTOM (3) ---
 
 [[tools]]
 name = "us_search_properties"
@@ -87,8 +79,6 @@ description = "Get US property sales history by address (requires ATTOM API key)
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = ["vault://attom-api-key"]
-
-# --- Middle East / Bayut (1) ---
 
 [[tools]]
 name = "me_search_listings"

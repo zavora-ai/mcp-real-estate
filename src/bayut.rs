@@ -6,6 +6,7 @@ use crate::types::PropertyListing;
 
 /// Bayut/PropertyFinder style API — Middle East & Africa listings
 /// Supports: UAE, Saudi Arabia, Egypt, Kenya, Nigeria (via RapidAPI or direct)
+#[derive(Clone)]
 pub struct Bayut {
     client: Client,
     api_key: String,

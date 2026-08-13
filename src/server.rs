@@ -102,6 +102,7 @@ pub struct BayutSearchInput {
     pub limit: Option<u32>,
 }
 
+#[derive(Clone)]
 pub struct RealEstateServer {
     pub uk_land_registry: UkLandRegistry,
     pub nominatim: Nominatim,
@@ -110,7 +111,7 @@ pub struct RealEstateServer {
     pub bayut: Option<Bayut>,
 }
 
-#[tool_router(server_handler)]
+#[tool_router]
 impl RealEstateServer {
     // --- UK Land Registry ---
 
@@ -238,4 +239,11 @@ impl RealEstateServer {
             None => "Bayut backend not configured. Set BAYUT_API_KEY environment variable.".into(),
         }
     }
+}
+
+adk_mcp_sdk::mcp_2026_server! {
+    server: RealEstateServer,
+    task_tools: [],
+    approval_tools: [],
+    cache_ttl_ms: 60_000,
 }

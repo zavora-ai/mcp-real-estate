@@ -4,6 +4,7 @@ use serde_json::Value;
 
 use crate::types::{AddressDetail, LocationInfo};
 
+#[derive(Clone)]
 pub struct Nominatim {
     client: Client,
 }
